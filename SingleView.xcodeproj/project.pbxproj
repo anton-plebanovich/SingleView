@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D141AA222351CB400CB6FF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D259E7620DAD4B20068A084 /* ViewController.swift */; };
 		0D259E7520DAD4B20068A084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D259E7420DAD4B20068A084 /* AppDelegate.swift */; };
-		0D259E7A20DAD4B20068A084 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D259E7820DAD4B20068A084 /* Main.storyboard */; };
 		0D259E7C20DAD4B30068A084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D259E7B20DAD4B30068A084 /* Assets.xcassets */; };
 		0D259E7F20DAD4B30068A084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */; };
+		0D43F15323C3B639009E1C28 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D43F14D23C3B639009E1C28 /* Home.storyboard */; };
+		0D43F15723C3B639009E1C28 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F15123C3B639009E1C28 /* HomeVC.swift */; };
 		250545D1FD8A2FDEF3B3A8C3 /* Pods_SingleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D259E7120DAD4B20068A084 /* SingleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D259E7420DAD4B20068A084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D259E7620DAD4B20068A084 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0D259E7920DAD4B20068A084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D259E7B20DAD4B30068A084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D259E7E20DAD4B30068A084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D259E8020DAD4B30068A084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D43F14D23C3B639009E1C28 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		0D43F15123C3B639009E1C28 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		2C3A094F370F897AD130291B /* Pods-SingleView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingleView/Pods-SingleView.release.xcconfig"; sourceTree = "<group>"; };
 		6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932E61CE766F3859A7F1384B /* Pods-SingleView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingleView/Pods-SingleView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,14 +61,22 @@
 		0D259E7320DAD4B20068A084 /* SingleView */ = {
 			isa = PBXGroup;
 			children = (
+				0D8922FF23B8B2A2004F625D /* Home */,
 				0D259E7420DAD4B20068A084 /* AppDelegate.swift */,
-				0D259E7620DAD4B20068A084 /* ViewController.swift */,
-				0D259E7820DAD4B20068A084 /* Main.storyboard */,
 				0D259E7B20DAD4B30068A084 /* Assets.xcassets */,
-				0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */,
 				0D259E8020DAD4B30068A084 /* Info.plist */,
+				0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */,
 			);
 			path = SingleView;
+			sourceTree = "<group>";
+		};
+		0D8922FF23B8B2A2004F625D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0D43F14D23C3B639009E1C28 /* Home.storyboard */,
+				0D43F15123C3B639009E1C28 /* HomeVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		2CBA0016FE6434940EE5FDD8 /* Frameworks */ = {
@@ -117,11 +125,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					0D259E7020DAD4B20068A084 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -148,9 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D43F15323C3B639009E1C28 /* Home.storyboard in Resources */,
 				0D259E7F20DAD4B30068A084 /* LaunchScreen.storyboard in Resources */,
 				0D259E7C20DAD4B30068A084 /* Assets.xcassets in Resources */,
-				0D259E7A20DAD4B20068A084 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D141AA222351CB400CB6FF0 /* ViewController.swift in Sources */,
+				0D43F15723C3B639009E1C28 /* HomeVC.swift in Sources */,
 				0D259E7520DAD4B20068A084 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,14 +216,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0D259E7820DAD4B20068A084 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D259E7920DAD4B20068A084 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -354,7 +355,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.SingleView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -373,7 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.SingleView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

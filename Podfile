@@ -9,13 +9,15 @@ use_frameworks!
 
 
 def core_pods
+    pod 'Alamofire', '~> 4.0'
 #    pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
     pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
-#    pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
+    pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
 #    pod 'KeyboardAvoidingView'
+#    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
 
-#    pod 'RxSwift', '~> 4.0'
-#    pod 'RxCocoa', '~> 4.0'
+#    pod 'RxSwift'
+#    pod 'RxCocoa'
 end
 
 target 'SingleView' do
