@@ -9,7 +9,7 @@ use_frameworks!
 
 
 def core_pods
-    pod 'Alamofire', '~> 4.0'
+    pod 'Alamofire'
 #    pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
     pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
     pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'

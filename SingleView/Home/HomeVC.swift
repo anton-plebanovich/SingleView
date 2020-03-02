@@ -15,11 +15,10 @@ final class HomeVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    private lazy var sm: SessionManager = {
-        let sm = SessionManager()
-        sm.retrier = self
+    private lazy var session: Session = {
+        let session = Session(interceptor: self)
         
-        return sm
+        return session
     }()
     
     // ******************************* MARK: - Initialization and Setup
@@ -27,11 +26,12 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let request = sm.request("https://tut.by").responseString { response in
-            print(response.result.value.description)
+        let request = session.request("https://tut.by").responseString { response in
+            print(try? response.result.get())
         }
         
         g.asyncMain(1) {
+            print("cancel")
             request.cancel()
         }
     }
@@ -43,9 +43,9 @@ extension HomeVC: InstantiatableFromStoryboard {}
 
 // MARK: - RequestRetrier
 
-extension HomeVC: RequestRetrier {
-    
-    func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-        completion(true, 5)
+extension HomeVC: RequestInterceptor {
+    func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+        print("retry \(error.localizedDescription)")
+        completion(.retryWithDelay(5))
     }
 }
