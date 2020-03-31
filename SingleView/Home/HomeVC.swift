@@ -10,30 +10,41 @@ import Alamofire
 import APExtensions
 import BaseClasses
 import UIKit
+import RxSwift
+import RxUtils
 
 final class HomeVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    private lazy var session: Session = {
-        let session = Session(interceptor: self)
-        
-        return session
-    }()
+    private let scheduler = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default), internalSerialQueueName: "identifier")
+    private let disposeBag = DisposeBag()
+    
+    var arr: [Int: Single<Int>] = [:]
     
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let request = session.request("https://tut.by").responseString { response in
-            print(try? response.result.get())
+            
+let observable = Observable<Int>
+    .create { observer in
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            observer.onNext(1)
+            observer.onCompleted()
         }
         
-        g.asyncMain(1) {
-            print("cancel")
-            request.cancel()
-        }
+        return Disposables.create()
+    }
+    .debug("debug")
+    .share(replay: 1, scope: .forever)
+    .take(1)
+
+_ = observable.subscribe()
+
+DispatchQueue.main.asyncAfter(deadline: .now()) {
+    _ = observable.subscribe()
+}
     }
 }
 
