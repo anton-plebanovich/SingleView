@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="74r-42-Bzf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="74r-42-Bzf">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,14 +28,29 @@
         <scene sceneID="xhn-q6-Rep">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h3f-Zv-HwD" customClass="HomeVC" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vcS-Yc-fVT"/>
-                        <viewControllerLayoutGuide type="bottom" id="REM-QD-S0i"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A71-5r-y83">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dash_line" translatesAutoresizingMaskIntoConstraints="NO" id="jjX-UQ-Hs7">
+                                <rect key="frame" x="93.5" y="44" width="1" height="623"/>
+                                <color key="tintColor" red="0.74117647060000003" green="0.74901960779999999" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dash_line_2" translatesAutoresizingMaskIntoConstraints="NO" id="cpi-df-Gcf">
+                                <rect key="frame" x="281" y="44" width="1" height="623"/>
+                                <color key="tintColor" red="0.74117647060000003" green="0.74901960779999999" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jjX-UQ-Hs7" firstAttribute="centerX" secondItem="A71-5r-y83" secondAttribute="centerX" multiplier="0.5" id="21h-Ha-pAp"/>
+                            <constraint firstItem="jjX-UQ-Hs7" firstAttribute="top" secondItem="I1f-mN-ZPb" secondAttribute="top" id="Cje-gC-eF8"/>
+                            <constraint firstItem="cpi-df-Gcf" firstAttribute="top" secondItem="I1f-mN-ZPb" secondAttribute="top" id="LUY-bE-WZP"/>
+                            <constraint firstItem="cpi-df-Gcf" firstAttribute="centerX" secondItem="A71-5r-y83" secondAttribute="centerX" multiplier="1.5" id="YGU-aX-XXV"/>
+                            <constraint firstAttribute="bottom" secondItem="cpi-df-Gcf" secondAttribute="bottom" id="xLb-u8-h3V"/>
+                            <constraint firstAttribute="bottom" secondItem="jjX-UQ-Hs7" secondAttribute="bottom" id="zvN-wu-n2x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I1f-mN-ZPb"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZAh-V0-cVx">
                         <barButtonItem key="backBarButtonItem" title=" " id="7bW-RY-0H9"/>
@@ -46,4 +62,8 @@
             <point key="canvasLocation" x="46" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_dash_line" width="1" height="4"/>
+        <image name="ic_dash_line_2" width="1" height="4"/>
+    </resources>
 </document>

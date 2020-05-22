@@ -17,17 +17,12 @@ final class HomeVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    let manager = NetworkReachabilityManager()
-    
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        manager?.startListening(onUpdatePerforming: { status in
-            print(status)
-            print(self.manager?.flags)
-        })
+        
     }
 }
 
