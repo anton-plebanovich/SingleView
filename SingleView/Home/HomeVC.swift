@@ -17,43 +17,64 @@ final class HomeVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    private lazy var dashLineImageView: UIImageView = {
-        // Using image as a background color because there is a bug
-        // in a asset catalog that prevents using image with a tile
-        // rule when top inset is zero.
-        let image = #imageLiteral(resourceName: "ic_dash_line")
-        let color = UIColor(patternImage: image)
+    private lazy var firstView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        view.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        let dashLineImageView = UIImageView()
-        dashLineImageView.translatesAutoresizingMaskIntoConstraints = false
-        dashLineImageView.backgroundColor = color
-        
-        return dashLineImageView
+        return view
     }()
     
-    private var topConstraint: NSLayoutConstraint!
+    private lazy var secondView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .blue
+        view.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        return view
+    }()
+    
+    private var firstViewWidth: NSLayoutConstraint!
+    private var secondViewWidth: NSLayoutConstraint!
     
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(dashLineImageView)
-        dashLineImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        topConstraint = dashLineImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200)
-        topConstraint!.isActive = true
-        dashLineImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        dashLineImageView.widthAnchor.constraint(equalToConstant: 1).isActive = true
+        view.addSubview(firstView)
+        view.addSubview(secondView)
+        
+        firstView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        firstView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+        firstViewWidth = firstView.widthAnchor.constraint(equalToConstant: 0)
+        firstViewWidth.isActive = true
+        
+        secondView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        secondView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+        secondViewWidth = secondView.widthAnchor.constraint(equalToConstant: 0)
+        secondViewWidth.isActive = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         g.asyncMain(1) {
-            UIView.animate(withDuration: 2) {
-                self.topConstraint.constant = 64
-                self.dashLineImageView.bounds.origin.y = -136
+            g.animate(2, options: []) {
+                self.firstViewWidth.constant = self.view.width
                 self.view.layoutIfNeeded()
+            }
+            
+            g.asyncMain(1) {
+                g.animate(2, options: []) {
+                    self.firstViewWidth.constant = 0
+                    self.secondViewWidth.constant = self.view.width
+                    self.view.layoutIfNeeded()
+                }
             }
         }
     }
