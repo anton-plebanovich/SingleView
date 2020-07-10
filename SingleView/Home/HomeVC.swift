@@ -17,66 +17,59 @@ final class HomeVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    private lazy var firstView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
-        view.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        return view
-    }()
-    
-    private lazy var secondView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
-        view.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        return view
-    }()
-    
-    private var firstViewWidth: NSLayoutConstraint!
-    private var secondViewWidth: NSLayoutConstraint!
-    
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(firstView)
-        view.addSubview(secondView)
+        cleanup()
         
-        firstView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        firstView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        var labels = getLabels()
+        let date1 = Date()
+        labels.forEach { $0.sizeToFit() }
+        print("******** sizeToFit", Date().timeIntervalSince(date1))
         
-        firstViewWidth = firstView.widthAnchor.constraint(equalToConstant: 0)
-        firstViewWidth.isActive = true
+        labels = getLabels()
+        labels.forEach { view.addSubview($0) }
+        labels.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            $0.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        }
+        let date5 = Date()
+        view.layoutIfNeeded()
+        print("******** layout view constraints", Date().timeIntervalSince(date5))
+        cleanup()
         
-        secondView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
-        secondView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        
-        secondViewWidth = secondView.widthAnchor.constraint(equalToConstant: 0)
-        secondViewWidth.isActive = true
-        
+        labels = getLabels()
+        labels.forEach { view.addSubview($0) }
+        labels.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            $0.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        }
+        let date6 = Date()
+        labels.forEach { $0.sizeToFit() }
+        view.layoutIfNeeded()
+        print("******** layout each inside constraints", Date().timeIntervalSince(date6))
+        cleanup()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    private func getLabels() -> [UILabel] {
+        let labels = stride(from: 0, to: 5000, by: 1)
+            .map { _ in UILabel() }
         
-        g.asyncMain(1) {
-            g.animate(2, options: []) {
-                self.firstViewWidth.constant = self.view.width
-                self.view.layoutIfNeeded()
-            }
-            
-            g.asyncMain(1) {
-                g.animate(2, options: []) {
-                    self.firstViewWidth.constant = 0
-                    self.secondViewWidth.constant = self.view.width
-                    self.view.layoutIfNeeded()
-                }
-            }
+        labels.forEach {
+            $0.text = "text"
+            $0.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin]
         }
+        
+        return labels
+    }
+    
+    private func cleanup() {
+        view.subviews.forEach { $0.removeFromSuperview() }
+        view.layoutIfNeeded()
     }
 }
 
