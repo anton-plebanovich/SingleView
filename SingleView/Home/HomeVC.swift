@@ -39,17 +39,17 @@ final class HomeVC: UIViewController {
                 imageSet.removeAll { $0 == imageView.tag }
             }
         }
-            
-            DispatchQueue.main.async { [self] in
-                imageViews.forEach { imageView in
-                    imageView.sd_cancelCurrentImageLoad()
-                }
-                
-                if !imageSet.isEmpty {
-                    print("Completion wasn't called for: \(imageSet)")
-                } else {
-                    print("Success!")
-                }
+        
+        DispatchQueue.main.async { [self] in
+            imageViews.forEach { imageView in
+                imageView.sd_cancelCurrentImageLoad()
             }
+            
+            if !imageSet.isEmpty {
+                print("Completion wasn't called for: \(imageSet)")
+            } else {
+                print("Success!")
+            }
+        }
     }
 }
