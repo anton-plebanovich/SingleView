@@ -13,7 +13,16 @@ final class HomeVC: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
     
-    @IBOutlet private var imageView: UIImageView!
+    private let imageViews: [UIImageView] = {
+        stride(from: 0, to: 1000, by: 1).map { index in
+            let imageView = UIImageView()
+            imageView.tag = index
+            
+            return imageView
+        }
+    }()
+    
+    var imageSet: [Int] = []
     
     // ******************************* MARK: - Private Properties
     
@@ -24,19 +33,23 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Works well on the FIRST app launch only.
-        // Clearing cache doesn't help.
-        SDImageCache.shared.clear(with: .all) { [self] in
-            
-            print("set image")
+        imageViews.forEach { [self] imageView in
+            imageSet.append(imageView.tag)
             imageView.sd_setImage(with: url) { _, _, _, _ in
-                print("completion")
-            }
-            
-            DispatchQueue.main.async { [self] in
-                print("cancel")
-                imageView.sd_cancelCurrentImageLoad()
+                imageSet.removeAll { $0 == imageView.tag }
             }
         }
+            
+            DispatchQueue.main.async { [self] in
+                imageViews.forEach { imageView in
+                    imageView.sd_cancelCurrentImageLoad()
+                }
+                
+                if !imageSet.isEmpty {
+                    print("Completion wasn't called for: \(imageSet)")
+                } else {
+                    print("Success!")
+                }
+            }
     }
 }

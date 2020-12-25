@@ -1,18 +1,24 @@
 PODS:
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
 
 DEPENDENCIES:
-  - SDWebImage
+  - SDWebImage (from `https://github.com/dreampiggy/SDWebImage`, branch `fix_race_condition_cancel_callback`)
 
-SPEC REPOS:
-  trunk:
-    - SDWebImage
+EXTERNAL SOURCES:
+  SDWebImage:
+    :branch: fix_race_condition_cancel_callback
+    :git: https://github.com/dreampiggy/SDWebImage
+
+CHECKOUT OPTIONS:
+  SDWebImage:
+    :commit: 9a010de0e8092c11c78c973de6e0f8dcbd296c00
+    :git: https://github.com/dreampiggy/SDWebImage
 
 SPEC CHECKSUMS:
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
 
-PODFILE CHECKSUM: a3f9022a72e502329ebf39911eeaf736d94d0db1
+PODFILE CHECKSUM: 8752348d22d7e9f1ee41004872a1bd4f0a44cb16
 
 COCOAPODS: 1.10.0
