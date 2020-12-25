@@ -42,7 +42,7 @@ final class HomeVC: UIViewController {
         
         DispatchQueue.main.async { [self] in
             imageViews.forEach { imageView in
-                imageView.sd_cancelCurrentImageLoad()
+                imageView.sd_setImage(with: url) { _, _, _, _ in }
             }
             
             if !imageSet.isEmpty {
