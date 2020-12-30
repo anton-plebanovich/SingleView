@@ -33,6 +33,10 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SDWebImageManager.shared.imageCache.clear(with: .all) {
+            
+        }
+        
         imageViews.forEach { [self] imageView in
             imageSet.append(imageView.tag)
             imageView.sd_setImage(with: url) { _, _, _, _ in
@@ -41,10 +45,69 @@ final class HomeVC: UIViewController {
         }
         
         DispatchQueue.main.async { [self] in
-            imageViews.forEach { imageView in
+            imageViews[0..<100].forEach { imageView in
                 imageView.sd_setImage(with: url) { _, _, _, _ in }
             }
             
+            DispatchQueue.main.async { [self] in
+                imageViews[100..<200].forEach { imageView in
+                    imageView.sd_setImage(with: url) { _, _, _, _ in }
+                }
+                
+                DispatchQueue.main.async { [self] in
+                    imageViews[200..<300].forEach { imageView in
+                        imageView.sd_setImage(with: url) { _, _, _, _ in }
+                    }
+                    
+                    DispatchQueue.main.async { [self] in
+                        imageViews[300..<400].forEach { imageView in
+                            imageView.sd_setImage(with: url) { _, _, _, _ in }
+                        }
+                        
+                        DispatchQueue.main.async { [self] in
+                            imageViews[400..<500].forEach { imageView in
+                                imageView.sd_setImage(with: url) { _, _, _, _ in }
+                            }
+                            
+                            DispatchQueue.main.async { [self] in
+                                imageViews[500..<600].forEach { imageView in
+                                    imageView.sd_setImage(with: url) { _, _, _, _ in }
+                                }
+                                
+                                DispatchQueue.main.async { [self] in
+                                    imageViews[600..<700].forEach { imageView in
+                                        imageView.sd_setImage(with: url) { _, _, _, _ in }
+                                    }
+                                    
+                                    DispatchQueue.main.async { [self] in
+                                        imageViews[700..<800].forEach { imageView in
+                                            imageView.sd_setImage(with: url) { _, _, _, _ in }
+                                        }
+                                        
+                                        DispatchQueue.main.async { [self] in
+                                            imageViews[800..<900].forEach { imageView in
+                                                imageView.sd_setImage(with: url) { _, _, _, _ in }
+                                            }
+                                            
+                                            
+                                            DispatchQueue.main.async { [self] in
+                                                imageViews[900..<1000].forEach { imageView in
+                                                    imageView.sd_setImage(with: url) { _, _, _, _ in }
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             if !imageSet.isEmpty {
                 print("Completion wasn't called for: \(imageSet)")
             } else {
