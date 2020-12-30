@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxRelay
 
 final class HomeVC: UIViewController {
     
@@ -25,14 +24,12 @@ final class HomeVC: UIViewController {
         
         DispatchQueue.global().async { [self] in
             while true {
-                var disposeBag: DisposeBag? = DisposeBag()
+                let disposeBag = DisposeBag()
                 let uuid = UUID().uuidString
                 let scheduler = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default),
                                                              internalSerialQueueName: "RxSwift-Test-\(uuid)")
                 
-                let relay = BehaviorRelay(value: 1)
-                
-                relay
+                Observable.just(1)
                     .observeOn(mainScheduler)
                     .debug("mainScheduler - \(uuid)")
                     .do(onNext: { [weak disposeBag] _ in print(disposeBag!) })
@@ -41,10 +38,7 @@ final class HomeVC: UIViewController {
                     .subscribeOn(scheduler)
                     .debug("scheduler - \(uuid)")
                     .subscribe()
-                    .disposed(by: disposeBag!)
-                
-                disposeBag = nil
-                relay.accept(2)
+                    .disposed(by: disposeBag)
             }
         }
     }
