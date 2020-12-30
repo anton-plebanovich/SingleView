@@ -1,24 +1,26 @@
 PODS:
-  - SDWebImage (5.10.0):
-    - SDWebImage/Core (= 5.10.0)
-  - SDWebImage/Core (5.10.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
-  - SDWebImage (from `https://github.com/dreampiggy/SDWebImage`, branch `fix_race_condition_cancel_callback`)
+  - RxCocoa
+  - RxSwift
 
-EXTERNAL SOURCES:
-  SDWebImage:
-    :branch: fix_race_condition_cancel_callback
-    :git: https://github.com/dreampiggy/SDWebImage
-
-CHECKOUT OPTIONS:
-  SDWebImage:
-    :commit: 9a010de0e8092c11c78c973de6e0f8dcbd296c00
-    :git: https://github.com/dreampiggy/SDWebImage
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
-  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 8752348d22d7e9f1ee41004872a1bd4f0a44cb16
+PODFILE CHECKSUM: 8421a2a59764cc5a15f0d116c959d6f05677c2c3
 
 COCOAPODS: 1.10.0

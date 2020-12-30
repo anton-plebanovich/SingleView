@@ -17,10 +17,10 @@ def core_pods
 #    pod 'KeyboardAvoidingView'
 #    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
 
-#    pod 'RxSwift'
-#    pod 'RxCocoa'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 #  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
-  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
+#  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
 end
 
 target 'SingleView' do
