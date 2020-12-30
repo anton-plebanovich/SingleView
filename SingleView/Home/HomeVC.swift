@@ -15,14 +15,12 @@ final class HomeVC: UIViewController {
     
     // ******************************* MARK: - Private Properties
     
-    let mainScheduler = MainScheduler.instance
-    
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async { [self] in
+        DispatchQueue.global().async {
             while true {
                 let disposeBag = DisposeBag()
                 let uuid = UUID().uuidString
@@ -30,10 +28,10 @@ final class HomeVC: UIViewController {
                                                              internalSerialQueueName: "RxSwift-Test-\(uuid)")
                 
                 Observable.just(1)
-                    .observeOn(mainScheduler)
+                    .observeOn(MainScheduler.instance)
                     .debug("mainScheduler - \(uuid)")
                     .do(onNext: { [weak disposeBag] _ in print(disposeBag!) })
-                    .subscribeOn(mainScheduler)
+                    .subscribeOn(MainScheduler.instance)
                     .observeOn(scheduler)
                     .subscribeOn(scheduler)
                     .debug("scheduler - \(uuid)")
