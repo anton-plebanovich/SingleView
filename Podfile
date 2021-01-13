@@ -16,8 +16,8 @@ def core_pods
 #    pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
 #    pod 'KeyboardAvoidingView'
 #    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
-
-    pod 'RxSwift'
+    pod 'RealmSwift', '~> 4.0'
+#    pod 'RxSwift'
 #    pod 'RxCocoa'
 #  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
 #  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
