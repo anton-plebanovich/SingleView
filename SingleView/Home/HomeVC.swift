@@ -20,24 +20,31 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async {
-            while true {
-                let disposeBag = DisposeBag()
-                let uuid = UUID().uuidString
-                let scheduler = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default),
-                                                             internalSerialQueueName: "RxSwift-Test-\(uuid)")
-                
-                Observable.just(1)
-                    .observeOn(MainScheduler.instance)
-                    .debug("mainScheduler - \(uuid)")
-                    .do(onNext: { [weak disposeBag] _ in print(disposeBag!) })
-                    .subscribeOn(MainScheduler.instance)
-                    .observeOn(scheduler)
-                    .subscribeOn(scheduler)
-                    .debug("scheduler - \(uuid)")
-                    .subscribe()
-                    .disposed(by: disposeBag)
-            }
+        while true {
+            let disposeBag = DisposeBag()
+            let uuid = UUID().uuidString
+            
+            let scheduler1 = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default),
+                                                          internalSerialQueueName: "RxSwift-Test-1-\(uuid)")
+            
+            let scheduler2 = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default),
+                                                          internalSerialQueueName: "RxSwift-Test-2-\(uuid)")
+            
+            Observable.just(1)
+                .observeOn(scheduler1)
+                .observeOn(scheduler2)
+                .debug("scheduler2 - \(uuid)")
+                .do(onNext: { [weak disposeBag] _ in
+                    if disposeBag == nil {
+                        print("Operation executed after disposal   - \(uuid)")
+                        fatalError("Please put a breakpoint on that line or install an exception breakpoint")
+                    }
+                })
+                .subscribeOn(scheduler2)
+                .debug("scheduler1 - \(uuid)")
+                .subscribeOn(scheduler1)
+                .subscribe()
+                .disposed(by: disposeBag)
         }
     }
 }
