@@ -31,7 +31,6 @@ final class HomeVC: UIViewController {
                                                           internalSerialQueueName: "RxSwift-Test-2-\(uuid)")
             
             Observable.just(1)
-                .observeOn(scheduler1)
                 .observeOn(scheduler2)
                 .debug("scheduler2 - \(uuid)")
                 .do(onNext: { [weak disposeBag] _ in
@@ -41,6 +40,7 @@ final class HomeVC: UIViewController {
                     }
                 })
                 .subscribeOn(scheduler2)
+                .observeOn(scheduler1)
                 .debug("scheduler1 - \(uuid)")
                 .subscribeOn(scheduler1)
                 .subscribe()
