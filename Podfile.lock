@@ -1,16 +1,36 @@
 PODS:
-  - RxSwift (5.1.1)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+  - RxSwiftExt (6.0.0):
+    - RxSwiftExt/Core (= 6.0.0)
+    - RxSwiftExt/RxCocoa (= 6.0.0)
+  - RxSwiftExt/Core (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwiftExt/RxCocoa (6.0.0):
+    - RxCocoa (= 6.0.0)
+    - RxSwiftExt/Core
 
 DEPENDENCIES:
   - RxSwift
+  - RxSwiftExt
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
+    - RxCocoa
+    - RxRelay
     - RxSwift
+    - RxSwiftExt
 
 SPEC CHECKSUMS:
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+  RxSwiftExt: 6637802b67dd4b60c00c661cc640316b693c0387
 
-PODFILE CHECKSUM: 3c18bdecc6ee53cc92674d81ade0bb74fffb48c5
+PODFILE CHECKSUM: e8efe23bce0877f66280812b65c6a5d03452e5c4
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

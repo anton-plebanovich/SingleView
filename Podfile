@@ -1,3 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/Artsy/Specs.git'
+
 # Deployment Target
 platform :ios, '10.3'
 
@@ -18,6 +21,7 @@ def core_pods
 #    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
 
     pod 'RxSwift'
+    pod 'RxSwiftExt'
 #    pod 'RxCocoa'
 #  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
 #  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'

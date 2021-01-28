@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxSwiftExt
 
 final class HomeVC: UIViewController {
     
@@ -20,31 +21,10 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        while true {
-            let disposeBag = DisposeBag()
-            let uuid = UUID().uuidString
-            
-            let scheduler1 = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default),
-                                                          internalSerialQueueName: "RxSwift-Test-1-\(uuid)")
-            
-            let scheduler2 = SerialDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default),
-                                                          internalSerialQueueName: "RxSwift-Test-2-\(uuid)")
-            
-            Observable.just(1)
-                .observeOn(scheduler2)
-                .debug("scheduler2 - \(uuid)")
-                .do(onNext: { [weak disposeBag] _ in
-                    if disposeBag == nil {
-                        print("Operation executed after disposal   - \(uuid)")
-                        fatalError("Please put a breakpoint on that line or install an exception breakpoint")
-                    }
-                })
-                .subscribeOn(scheduler2)
-                .observeOn(scheduler1)
-                .debug("scheduler1 - \(uuid)")
-                .subscribeOn(scheduler1)
-                .subscribe()
-                .disposed(by: disposeBag)
-        }
+        _ = Observable<Int>.error(NSError(domain: "", code: 0))
+            .debug()
+            .retry(.immediate(maxCount: 1))
+            .catchErrorJustComplete()
+            .subscribe()
     }
 }
