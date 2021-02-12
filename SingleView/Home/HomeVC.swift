@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+private var g_dataRequest: DataRequest!
+
 final class HomeVC: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
@@ -26,20 +28,15 @@ final class HomeVC: UIViewController {
                           startRequestsImmediately: true,
                           interceptor: ErrorsRequestRetrier())
     
-    let url = URL(string: "https://google.com")!
+    let url = URL(string: "https://some_non_existing_host_should_be_good_enough.com")!
     
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startPerformingRequests()
-    }
-    
-    fileprivate func startPerformingRequests() {
-        
         NSLog("Start")
-        let dataRequest = session.request(url).response { response in
+        g_dataRequest = session.request(url).response { response in
             if let error = response.error {
                 if error.isExplicitlyCancelledError {
                     NSLog("Cancelled")
@@ -50,11 +47,6 @@ final class HomeVC: UIViewController {
             } else {
                 NSLog("Success")
             }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            dataRequest.cancel()
-            self.startPerformingRequests()
         }
     }
 }
@@ -67,7 +59,11 @@ final class ErrorsRequestRetrier: RequestAdapter, RequestInterceptor {
             completion(.doNotRetry)
         } else {
             NSLog("Retry")
-            completion(.retryWithDelay(1))
+            completion(.retryWithDelay(10))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                g_dataRequest.cancel()
+            }
         }
     }
 }
