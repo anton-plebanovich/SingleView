@@ -23,6 +23,22 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var query: [String: Any] = [:]
+        query[String(kSecClass)] = String(kSecClassGenericPassword)
+        query[String(kSecAttrSynchronizable)] = kSecAttrSynchronizableAny
+        query[String(kSecAttrService)] = "RxUtils_service"
+        query[String(kSecMatchLimit)] = kSecMatchLimitOne
+        query[String(kSecReturnData)] = kCFBooleanTrue
+        query[String(kSecAttrAccount)] = "RxUtils_is_keychain_accessible_key"
+        
+        var result: AnyObject?
+        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        if status == errSecSuccess || status == errSecItemNotFound {
+            print("success")
+        } else {
+            print("failure")
+        }
+        
         do {
             print(try keychain.getData("my_key") != nil)
         } catch {
