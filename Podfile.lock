@@ -1,22 +1,16 @@
 PODS:
-  - Realm (4.4.1):
-    - Realm/Headers (= 4.4.1)
-  - Realm/Headers (4.4.1)
-  - RealmSwift (4.4.1):
-    - Realm (= 4.4.1)
+  - KeychainAccess (4.2.2)
 
 DEPENDENCIES:
-  - RealmSwift (~> 4.0)
+  - KeychainAccess
 
 SPEC REPOS:
   trunk:
-    - Realm
-    - RealmSwift
+    - KeychainAccess
 
 SPEC CHECKSUMS:
-  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
-  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
 
-PODFILE CHECKSUM: f2843d01f9b27acdf8a4b736710f593f6421a4b3
+PODFILE CHECKSUM: 598bf696a0cc80ebec56d5d5ec5a9e0bb5379508
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

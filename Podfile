@@ -9,6 +9,7 @@ use_frameworks!
 
 
 def core_pods
+  pod 'KeychainAccess'
 #    pod 'Alamofire'
 #    pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
 #    pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
@@ -16,7 +17,7 @@ def core_pods
 #    pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
 #    pod 'KeyboardAvoidingView'
 #    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
-    pod 'RealmSwift', '~> 4.0'
+#    pod 'RealmSwift', '~> 4.0'
 #    pod 'RxSwift'
 #    pod 'RxCocoa'
 #  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
