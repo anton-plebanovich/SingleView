@@ -16,22 +16,27 @@ PODS:
 
 DEPENDENCIES:
   - APExtensions (from `https://github.com/APUtils/APExtensions`)
-  - RealmSwift
+  - RealmSwift (from `https://github.com/realm/realm-cocoa`, branch `tg/sync-notifications`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - LogsManager
     - Realm
-    - RealmSwift
 
 EXTERNAL SOURCES:
   APExtensions:
     :git: https://github.com/APUtils/APExtensions
+  RealmSwift:
+    :branch: tg/sync-notifications
+    :git: https://github.com/realm/realm-cocoa
 
 CHECKOUT OPTIONS:
   APExtensions:
     :commit: c8c3cd2d646d609fd7b645837981d018af191eee
     :git: https://github.com/APUtils/APExtensions
+  RealmSwift:
+    :commit: 90e4cac4ef1afabe08e420c3997776982a892f5f
+    :git: https://github.com/realm/realm-cocoa
 
 SPEC CHECKSUMS:
   APExtensions: b46cab78fe5d291e1157838fd78962a886e627df
@@ -39,6 +44,6 @@ SPEC CHECKSUMS:
   Realm: fbcbde2620d51623cc5b18e28f5b165c39abef52
   RealmSwift: e4bea8e42efad3d543aea23b56504069c6faaea2
 
-PODFILE CHECKSUM: af37cf3509b21045ca23094a9a388929236184e2
+PODFILE CHECKSUM: 00430e52263edac80a12fb647ae9cc2f744ea864
 
 COCOAPODS: 1.11.2

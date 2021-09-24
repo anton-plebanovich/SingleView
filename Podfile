@@ -19,7 +19,7 @@ def core_pods
 #    pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
 #    pod 'KeyboardAvoidingView'
 #    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
-    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa', :branch => 'jf/smalltalk'
+    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa', :branch => 'tg/sync-notifications'
 #    pod 'RxSwift'
 #    pod 'RxCocoa'
 #    pod 'RxRelay'
