@@ -1,34 +1,18 @@
 PODS:
-  - APExtensions (10.0.0):
-    - APExtensions/Core (= 10.0.0)
-    - APExtensions/Storyboard (= 10.0.0)
-    - APExtensions/ViewConfiguration (= 10.0.0)
-  - APExtensions/Core (10.0.0):
-    - LogsManager/RoutableLogger (>= 9.1.5)
-  - APExtensions/Storyboard (10.0.0)
-  - APExtensions/ViewConfiguration (10.0.0)
-  - LogsManager/RoutableLogger (9.1.5)
+  - AppUtils/Extension (1.0.0)
+  - AppUtils/Main (1.0.0)
 
 DEPENDENCIES:
-  - APExtensions (from `https://github.com/APUtils/APExtensions`)
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - LogsManager
+  - AppUtils/Extension (from `LocalPod/AppUtils.podspec`)
+  - AppUtils/Main (from `LocalPod/AppUtils.podspec`)
 
 EXTERNAL SOURCES:
-  APExtensions:
-    :git: https://github.com/APUtils/APExtensions
-
-CHECKOUT OPTIONS:
-  APExtensions:
-    :commit: c8c3cd2d646d609fd7b645837981d018af191eee
-    :git: https://github.com/APUtils/APExtensions
+  AppUtils:
+    :path: LocalPod/AppUtils.podspec
 
 SPEC CHECKSUMS:
-  APExtensions: b46cab78fe5d291e1157838fd78962a886e627df
-  LogsManager: e821cea87e608e96cf39a68009d830579098a2cb
+  AppUtils: ba901d9b46e5108bf91d3d2df2b648050b11c877
 
-PODFILE CHECKSUM: 687f68c9405ce554074027f6a04b90b0def638bc
+PODFILE CHECKSUM: f2c27027abd6d3d16a9f95ed2e1d3aca21c1d4c1
 
 COCOAPODS: 1.11.2
