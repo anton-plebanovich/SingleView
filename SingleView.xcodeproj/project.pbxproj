@@ -10,64 +10,22 @@
 		0D259E7520DAD4B20068A084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D259E7420DAD4B20068A084 /* AppDelegate.swift */; };
 		0D259E7C20DAD4B30068A084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D259E7B20DAD4B30068A084 /* Assets.xcassets */; };
 		0D259E7F20DAD4B30068A084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */; };
-		0D3DE63E272CD934003CA28E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3DE63D272CD934003CA28E /* UserNotifications.framework */; };
-		0D3DE640272CD934003CA28E /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3DE63F272CD934003CA28E /* UserNotificationsUI.framework */; };
-		0D3DE643272CD934003CA28E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DE642272CD934003CA28E /* NotificationViewController.swift */; };
-		0D3DE646272CD934003CA28E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3DE644272CD934003CA28E /* MainInterface.storyboard */; };
-		0D3DE64A272CD934003CA28E /* SingleViewExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D3DE63C272CD934003CA28E /* SingleViewExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D43F15323C3B639009E1C28 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D43F14D23C3B639009E1C28 /* Home.storyboard */; };
 		0D43F15723C3B639009E1C28 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F15123C3B639009E1C28 /* HomeVC.swift */; };
 		250545D1FD8A2FDEF3B3A8C3 /* Pods_SingleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */; };
-		2BB385C2E5A52ACDFD424C94 /* Pods_SingleViewExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6688C43FB1062F0A7F1CE3C6 /* Pods_SingleViewExtension.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0D3DE648272CD934003CA28E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D259E6920DAD4B20068A084 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D3DE63B272CD934003CA28E;
-			remoteInfo = SingleViewExtension;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0D3DE64E272CD934003CA28E /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				0D3DE64A272CD934003CA28E /* SingleViewExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		00518F4012813036480FAF33 /* Pods-SingleViewExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleViewExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingleViewExtension/Pods-SingleViewExtension.release.xcconfig"; sourceTree = "<group>"; };
 		0D259E7120DAD4B20068A084 /* SingleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D259E7420DAD4B20068A084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D259E7B20DAD4B30068A084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D259E7E20DAD4B30068A084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D259E8020DAD4B30068A084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D3DE633272CD79E003CA28E /* AppUtils.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = AppUtils.podspec; sourceTree = "<group>"; };
-		0D3DE635272CD8F0003CA28E /* Class+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class+Extension.swift"; sourceTree = "<group>"; };
-		0D3DE637272CD8F0003CA28E /* Class+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class+Extension.swift"; sourceTree = "<group>"; };
-		0D3DE63C272CD934003CA28E /* SingleViewExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SingleViewExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D3DE63D272CD934003CA28E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		0D3DE63F272CD934003CA28E /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
-		0D3DE642272CD934003CA28E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		0D3DE645272CD934003CA28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		0D3DE647272CD934003CA28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D43F14D23C3B639009E1C28 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		0D43F15123C3B639009E1C28 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		2C3A094F370F897AD130291B /* Pods-SingleView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingleView/Pods-SingleView.release.xcconfig"; sourceTree = "<group>"; };
-		6688C43FB1062F0A7F1CE3C6 /* Pods_SingleViewExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingleViewExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932E61CE766F3859A7F1384B /* Pods-SingleView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingleView/Pods-SingleView.debug.xcconfig"; sourceTree = "<group>"; };
-		F1AC0E8CA0399229BEE67656 /* Pods-SingleViewExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleViewExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingleViewExtension/Pods-SingleViewExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,25 +37,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0D3DE639272CD934003CA28E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D3DE640272CD934003CA28E /* UserNotificationsUI.framework in Frameworks */,
-				0D3DE63E272CD934003CA28E /* UserNotifications.framework in Frameworks */,
-				2BB385C2E5A52ACDFD424C94 /* Pods_SingleViewExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0D259E6820DAD4B20068A084 = {
 			isa = PBXGroup;
 			children = (
-				0D3DE632272CD78B003CA28E /* LocalPod */,
 				0D259E7320DAD4B20068A084 /* SingleView */,
-				0D3DE641272CD934003CA28E /* SingleViewExtension */,
 				0D259E7220DAD4B20068A084 /* Products */,
 				6B89D3B809DBFCC5D73B70FA /* Pods */,
 				2CBA0016FE6434940EE5FDD8 /* Frameworks */,
@@ -108,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				0D259E7120DAD4B20068A084 /* SingleView.app */,
-				0D3DE63C272CD934003CA28E /* SingleViewExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,42 +70,6 @@
 			path = SingleView;
 			sourceTree = "<group>";
 		};
-		0D3DE632272CD78B003CA28E /* LocalPod */ = {
-			isa = PBXGroup;
-			children = (
-				0D3DE634272CD8F0003CA28E /* Extension */,
-				0D3DE636272CD8F0003CA28E /* Main */,
-				0D3DE633272CD79E003CA28E /* AppUtils.podspec */,
-			);
-			path = LocalPod;
-			sourceTree = "<group>";
-		};
-		0D3DE634272CD8F0003CA28E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				0D3DE635272CD8F0003CA28E /* Class+Extension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		0D3DE636272CD8F0003CA28E /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				0D3DE637272CD8F0003CA28E /* Class+Extension.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		0D3DE641272CD934003CA28E /* SingleViewExtension */ = {
-			isa = PBXGroup;
-			children = (
-				0D3DE642272CD934003CA28E /* NotificationViewController.swift */,
-				0D3DE644272CD934003CA28E /* MainInterface.storyboard */,
-				0D3DE647272CD934003CA28E /* Info.plist */,
-			);
-			path = SingleViewExtension;
-			sourceTree = "<group>";
-		};
 		0D8922FF23B8B2A2004F625D /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */,
-				0D3DE63D272CD934003CA28E /* UserNotifications.framework */,
-				0D3DE63F272CD934003CA28E /* UserNotificationsUI.framework */,
-				6688C43FB1062F0A7F1CE3C6 /* Pods_SingleViewExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,8 +92,6 @@
 			children = (
 				932E61CE766F3859A7F1384B /* Pods-SingleView.debug.xcconfig */,
 				2C3A094F370F897AD130291B /* Pods-SingleView.release.xcconfig */,
-				F1AC0E8CA0399229BEE67656 /* Pods-SingleViewExtension.debug.xcconfig */,
-				00518F4012813036480FAF33 /* Pods-SingleViewExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -203,35 +107,16 @@
 				0D259E6D20DAD4B20068A084 /* Sources */,
 				0D259E6E20DAD4B20068A084 /* Frameworks */,
 				0D259E6F20DAD4B20068A084 /* Resources */,
-				0D3DE64E272CD934003CA28E /* Embed App Extensions */,
+				09F7D3C037C3DFA7699551AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0D3DE649272CD934003CA28E /* PBXTargetDependency */,
 			);
 			name = SingleView;
 			productName = SingleView;
 			productReference = 0D259E7120DAD4B20068A084 /* SingleView.app */;
 			productType = "com.apple.product-type.application";
-		};
-		0D3DE63B272CD934003CA28E /* SingleViewExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0D3DE64B272CD934003CA28E /* Build configuration list for PBXNativeTarget "SingleViewExtension" */;
-			buildPhases = (
-				931D39CA457C67FDCC8112BC /* [CP] Check Pods Manifest.lock */,
-				0D3DE638272CD934003CA28E /* Sources */,
-				0D3DE639272CD934003CA28E /* Frameworks */,
-				0D3DE63A272CD934003CA28E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SingleViewExtension;
-			productName = SingleViewExtension;
-			productReference = 0D3DE63C272CD934003CA28E /* SingleViewExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -239,17 +124,13 @@
 		0D259E6920DAD4B20068A084 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				DefaultBuildSystemTypeForWorkspace = Original;
-				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					0D259E7020DAD4B20068A084 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1130;
-					};
-					0D3DE63B272CD934003CA28E = {
-						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
@@ -267,7 +148,6 @@
 			projectRoot = "";
 			targets = (
 				0D259E7020DAD4B20068A084 /* SingleView */,
-				0D3DE63B272CD934003CA28E /* SingleViewExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -283,17 +163,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0D3DE63A272CD934003CA28E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D3DE646272CD934003CA28E /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09F7D3C037C3DFA7699551AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SingleView/Pods-SingleView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SingleView/Pods-SingleView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SingleView/Pods-SingleView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		782BD0656442FDAD2BB3891A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,28 +201,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		931D39CA457C67FDCC8112BC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SingleViewExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -346,23 +213,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0D3DE638272CD934003CA28E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D3DE643272CD934003CA28E /* NotificationViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0D3DE649272CD934003CA28E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0D3DE63B272CD934003CA28E /* SingleViewExtension */;
-			targetProxy = 0D3DE648272CD934003CA28E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */ = {
@@ -371,14 +222,6 @@
 				0D259E7E20DAD4B30068A084 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		0D3DE644272CD934003CA28E /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D3DE645272CD934003CA28E /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -506,7 +349,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UW54N2U6G5;
 				INFOPLIST_FILE = SingleView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,72 +368,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UW54N2U6G5;
 				INFOPLIST_FILE = SingleView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.SingleView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0D3DE64C272CD934003CA28E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1AC0E8CA0399229BEE67656 /* Pods-SingleViewExtension.debug.xcconfig */;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UW54N2U6G5;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SingleViewExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SingleViewExtension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Anton Plebanovich. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.SingleView.Extension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0D3DE64D272CD934003CA28E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00518F4012813036480FAF33 /* Pods-SingleViewExtension.release.xcconfig */;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UW54N2U6G5;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SingleViewExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SingleViewExtension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Anton Plebanovich. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.SingleView.Extension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,15 +396,6 @@
 			buildConfigurations = (
 				0D259E8420DAD4B30068A084 /* Debug */,
 				0D259E8520DAD4B30068A084 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0D3DE64B272CD934003CA28E /* Build configuration list for PBXNativeTarget "SingleViewExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0D3DE64C272CD934003CA28E /* Debug */,
-				0D3DE64D272CD934003CA28E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

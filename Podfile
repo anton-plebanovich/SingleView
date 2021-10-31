@@ -1,39 +1,53 @@
+source 'https://github.com/CocoaPods/Specs.git'
 
-######
+# Deployment Target
+platform :ios, '10.3'
 
-use_frameworks! :linkage => :static
+# Ignore pods code warnings
+#inhibit_all_warnings!
 
-######
+# Add pods as frameworks so we could add obj-c and swift 3.0 pods
+use_frameworks!
 
-#use_frameworks!
-#install! 'cocoapods', :deduplicate_targets => false
 
-######
+def core_pods
+#  pod 'KeychainAccess'
+#    pod 'Alamofire'
+#    pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
+    pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
+#    pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
+#    pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
+#    pod 'KeyboardAvoidingView'
+#    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
+#    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa', :tag => 'v10.14.0'
+#    pod 'RxSwift'
+#    pod 'RxCocoa'
+#    pod 'RxRelay'
+#  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
+#  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
 
-#use_frameworks! :linkage => :static
-#install! 'cocoapods', :deduplicate_targets => true
 
-######
-
-platform :ios, '12.0'
-inhibit_all_warnings!
-
-target 'SingleView' do
-  pod 'AppUtils/Main', :path => 'LocalPod/AppUtils.podspec', :inhibit_warnings => false
+#pod 'Moya', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
+#pod 'Moya/RxSwift', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
 end
 
-target 'SingleViewExtension' do
-  pod 'AppUtils/Extension', :path => 'LocalPod/AppUtils.podspec', :inhibit_warnings => false
+target 'SingleView' do
+    core_pods
 end
 
 
 post_install do |installer|
-  pods_project = installer.pods_project
-  
-  # Add podInstall.command and podUpdate.command shell scripts to Pods project
-  podspec = pods_project.new_file "../LocalPod/AppUtils.podspec"
-  podspec.explicit_file_type = 'text.script.ruby'
-  
-  pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
-  pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
+    # Add podInstall.command and podUpdate.command shell scripts to Pods project
+    pods_project = installer.pods_project
+    pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
+    pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
+    
+    # Update specific target build configurations
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        # Silence deployment target warnings
+        config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+        config.build_settings.delete 'ARCHS'
+      end
+    end
 end
