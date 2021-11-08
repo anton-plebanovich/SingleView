@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 # Deployment Target
-platform :ios, '10.3'
+platform :ios, '13.0'
 
 # Ignore pods code warnings
 #inhibit_all_warnings!
