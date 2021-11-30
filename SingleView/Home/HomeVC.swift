@@ -8,23 +8,4 @@
 
 import UIKit
 
-final class HomeVC: UIViewController {
-    
-    // ******************************* MARK: - @IBOutlets
-    
-    // ******************************* MARK: - Private Properties
-
-    // ******************************* MARK: - Initialization and Setup
-    
-    // ******************************* MARK: - UIViewController Overrides
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-}
+final class HomeVC: UIViewController {}
