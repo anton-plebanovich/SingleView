@@ -6,10 +6,9 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
-import APExtensions
 import UIKit
 
-final class HomeVC: UIViewController, InstantiatableFromStoryboard {
+final class HomeVC: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
     

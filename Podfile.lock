@@ -1,34 +1,3 @@
-PODS:
-  - APExtensions (10.0.0):
-    - APExtensions/Core (= 10.0.0)
-    - APExtensions/Storyboard (= 10.0.0)
-    - APExtensions/ViewConfiguration (= 10.0.0)
-  - APExtensions/Core (10.0.0):
-    - LogsManager/RoutableLogger (>= 9.1.5)
-  - APExtensions/Storyboard (10.0.0)
-  - APExtensions/ViewConfiguration (10.0.0)
-  - LogsManager/RoutableLogger (9.1.5)
-
-DEPENDENCIES:
-  - APExtensions (from `https://github.com/APUtils/APExtensions`)
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - LogsManager
-
-EXTERNAL SOURCES:
-  APExtensions:
-    :git: https://github.com/APUtils/APExtensions
-
-CHECKOUT OPTIONS:
-  APExtensions:
-    :commit: c8c3cd2d646d609fd7b645837981d018af191eee
-    :git: https://github.com/APUtils/APExtensions
-
-SPEC CHECKSUMS:
-  APExtensions: b46cab78fe5d291e1157838fd78962a886e627df
-  LogsManager: e821cea87e608e96cf39a68009d830579098a2cb
-
-PODFILE CHECKSUM: 51b7f50beb3f61b70ebbdcbe10d4634ff4bda036
+PODFILE CHECKSUM: ce7f96188dbe4e99289fbfc2a8c2f8c4cae92fe4
 
 COCOAPODS: 1.11.2

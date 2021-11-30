@@ -14,7 +14,7 @@ def core_pods
 #  pod 'KeychainAccess'
 #    pod 'Alamofire'
 #    pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
-    pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
+#    pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
 #    pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
 #    pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
 #    pod 'KeyboardAvoidingView'
