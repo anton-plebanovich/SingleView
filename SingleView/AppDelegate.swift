@@ -14,26 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    fileprivate let queue = DispatchQueue(label: "AppDelegate")
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         
-        _ = DividendsModel.self
-        
-        // For some reason it might crash only after dispatch is done
-        DispatchQueue.main.async {
-            _ = DividendsModel.self
-        }
-        
-        // Just one more to be sure
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            _ = DividendsModel.self
-            print("SUCCESS")
+        stride(from: 0.0, to: 1000, by: 1).forEach { i in
+            queue.asyncAfter(deadline: .now() + i / 10) {
+                print("Starting: \(i)")
+                
+                let pm = Model()
+                pm._freeze()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    _ = pm
+                    print("Finished: \(i)")
+                }
+            }
         }
         
         return true
     }
-}
-
-// That's the core cause
-public extension DividendsModel {
-    override var description: String { "" }
 }
