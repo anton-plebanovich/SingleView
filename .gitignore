@@ -5,6 +5,11 @@
 ##
 .DS_Store
 
+## Android
+.gradle
+.idea
+local.properties
+
 ## Build generated
 build/
 DerivedData
