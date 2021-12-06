@@ -1,22 +1,80 @@
 PODS:
+  - APExtensions/Occupiable (10.1.8)
+  - APExtensions/OptionalType (10.1.8)
   - Realm (10.20.0):
     - Realm/Headers (= 10.20.0)
   - Realm/Headers (10.20.0)
   - RealmSwift (10.20.0):
     - Realm (= 10.20.0)
+  - RoutableLogger (9.1.12)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRealm (5.0.3):
+    - Realm (~> 10.7)
+    - RealmSwift (~> 10.7)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - RxSwiftExt (6.0.1):
+    - RxSwiftExt/Core (= 6.0.1)
+    - RxSwiftExt/RxCocoa (= 6.0.1)
+  - RxSwiftExt/Core (6.0.1):
+    - RxSwift (~> 6.0)
+  - RxSwiftExt/RxCocoa (6.0.1):
+    - RxCocoa (~> 6.0)
+    - RxSwiftExt/Core
+  - RxUtils (3.0.0):
+    - APExtensions/Occupiable (~> 10.1.6)
+    - APExtensions/OptionalType (~> 10.1.6)
+    - RoutableLogger (>= 9.1.5)
+    - RxCocoa (~> 6)
+    - RxSwift (~> 6)
+    - RxSwiftExt (~> 6)
 
 DEPENDENCIES:
   - RealmSwift
+  - RxCocoa
+  - RxRealm
+  - RxRelay
+  - RxSwift
+  - RxUtils (from `https://github.com/APUtils/RxUtils`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - APExtensions
     - Realm
     - RealmSwift
+    - RoutableLogger
+    - RxCocoa
+    - RxRealm
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+
+EXTERNAL SOURCES:
+  RxUtils:
+    :git: https://github.com/APUtils/RxUtils
+
+CHECKOUT OPTIONS:
+  RxUtils:
+    :commit: 9bce0fee1bf31399c605aa72938f8504ea035caf
+    :git: https://github.com/APUtils/RxUtils
 
 SPEC CHECKSUMS:
+  APExtensions: 779d37ae592fd4f4b3f7ad91aa840a634ee89adf
   Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
   RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
+  RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRealm: d9fedf16e3ead54b0be2077d2ff4a1b2dc27be39
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
+  RxUtils: fa77d59c99f8797db5092f523f08feeee809a36b
 
-PODFILE CHECKSUM: 610960cb1aecf237e568bc708ba6fecabd92c6ba
+PODFILE CHECKSUM: 1685d7f28eaf3b4cf9131e69c3a388762873d2c3
 
 COCOAPODS: 1.11.2
