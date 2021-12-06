@@ -31,8 +31,22 @@
                     <view key="view" contentMode="scaleToFill" id="A71-5r-y83">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyC-cm-IW0">
+                                <rect key="frame" x="154" y="318" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="onTap:" destination="h3f-Zv-HwD" eventType="touchUpInside" id="2bS-Pr-tr2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="I1f-mN-ZPb"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QyC-cm-IW0" firstAttribute="centerY" secondItem="A71-5r-y83" secondAttribute="centerY" id="q19-Pc-Kii"/>
+                            <constraint firstItem="QyC-cm-IW0" firstAttribute="centerX" secondItem="A71-5r-y83" secondAttribute="centerX" id="wSN-79-iQ2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZAh-V0-cVx">
                         <barButtonItem key="backBarButtonItem" title=" " id="7bW-RY-0H9"/>
