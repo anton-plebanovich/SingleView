@@ -43,10 +43,13 @@ final class HomeVC: UIViewController {
                         print("1 | deleting all objects")
                         realm.deleteAll()
                     }
+                    realm.refresh()
                 }
             
             _ = Observable.array(from: result, synchronousStart: false, on: queue)
                 .subscribeOnNext { objects in
+                    let realm = try! Realm(configuration: .defaultConfiguration, queue: queue)
+                    realm.refresh()
                     if let object = objects.first {
                         print("2 | isInvalidated: \(object.isInvalidated)")
                     } else {
