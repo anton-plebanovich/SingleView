@@ -7,11 +7,11 @@ PODS:
     - RoutableLogger
   - APExtensions/Storyboard (10.1.8)
   - APExtensions/ViewModel (10.1.8)
-  - Realm (10.20.1):
-    - Realm/Headers (= 10.20.1)
-  - Realm/Headers (10.20.1)
-  - RealmSwift (10.20.1):
-    - Realm (= 10.20.1)
+  - Realm (10.22.0):
+    - Realm/Headers (= 10.22.0)
+  - Realm/Headers (10.22.0)
+  - RealmSwift (10.22.0):
+    - Realm (= 10.22.0)
   - RoutableLogger (9.1.12)
 
 DEPENDENCIES:
@@ -35,10 +35,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   APExtensions: c67bbacc1e39e07d0ed63f24905ba1013bf13988
-  Realm: fac5ecd031fcb81171627b74944c885662d4b266
-  RealmSwift: 9b02d25acb46a14756bde9893abb99e2e3675923
+  Realm: d9e4e5877095a6722145811f56fe89a531c9659d
+  RealmSwift: e4191b4b957fcfcbed23751ec65eec98f8173ab5
   RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
 
-PODFILE CHECKSUM: af37cf3509b21045ca23094a9a388929236184e2
+PODFILE CHECKSUM: 7b7e8693e0414505a80a8631d687c1a7aef7e70b
 
 COCOAPODS: 1.11.2
