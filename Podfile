@@ -1,5 +1,3 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
 # Deployment Target
 platform :ios, '13.0'
 
