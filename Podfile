@@ -9,24 +9,7 @@ use_frameworks!
 
 
 def core_pods
-#  pod 'KeychainAccess'
-#    pod 'Alamofire'
-#    pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
-#    pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
-#    pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
-#    pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
-#    pod 'KeyboardAvoidingView'
-#    pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
-#    pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa', :tag => 'v10.14.0'
-#    pod 'RxSwift'
-#    pod 'RxCocoa'
-#    pod 'RxRelay'
-#  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
-#  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
-
-
-#pod 'Moya', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
-#pod 'Moya/RxSwift', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
+  pod 'CocoaLumberjack/Swift'
 end
 
 target 'SingleView' do
