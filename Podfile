@@ -7,6 +7,7 @@ platform :ios, '13.0'
 # Add pods as frameworks so we could add obj-c and swift 3.0 pods
 use_frameworks!
 
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 
 def core_pods
 #  pod 'KeychainAccess'
