@@ -42,9 +42,9 @@ final class HomeVC: UIViewController {
         imageView.sd_setImage(with: url) { image, error, cacheType, url in
             
             if let error = error {
-                print("Called error completion for '\(url!)': \(error)")
+                print("Called error completion for '\(url!.lastPathComponent)': \(error)")
             } else {
-                print("Called success completion for '\(url!)'")
+                print("Called success completion for '\(url!.lastPathComponent)'")
             }
         }
     }
