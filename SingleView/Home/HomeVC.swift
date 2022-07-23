@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class HomeVC: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
+    
+    @IBOutlet fileprivate var imageView: UIImageView!
     
     // ******************************* MARK: - Private Properties
 
@@ -21,10 +24,28 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SDImageCache.shared.clearMemory()
+        SDImageCache.shared.clearDisk()
+        
+        setImage(url: URL(string: "https://github.githubassets.com/images/modules/logos_page/Octocat.png")!)
+        DispatchQueue.main.async {
+            self.setImage(url: URL(string: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")!)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+    }
+    
+    private func setImage(url: URL) {
+        imageView.sd_setImage(with: url) { image, error, cacheType, url in
+            
+            if let error = error {
+                print("Called error completion for '\(url!)': \(error)")
+            } else {
+                print("Called success completion for '\(url!)'")
+            }
+        }
     }
 }
