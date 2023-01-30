@@ -26,7 +26,7 @@ def core_pods
 #  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
 #  pod 'Moya', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
 #  pod 'Moya/RxSwift', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
-#  pod 'lottie-ios'
+  pod 'lottie-ios'
 end
 
 target 'SingleView' do

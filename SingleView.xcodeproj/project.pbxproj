@@ -12,6 +12,7 @@
 		0D259E7F20DAD4B30068A084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D259E7D20DAD4B30068A084 /* LaunchScreen.storyboard */; };
 		0D43F15323C3B639009E1C28 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D43F14D23C3B639009E1C28 /* Home.storyboard */; };
 		0D43F15723C3B639009E1C28 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F15123C3B639009E1C28 /* HomeVC.swift */; };
+		0DDA92472986F88300F5BBBD /* astronaut_colored.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA92462986F88300F5BBBD /* astronaut_colored.json */; };
 		250545D1FD8A2FDEF3B3A8C3 /* Pods_SingleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		0D259E8020DAD4B30068A084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D43F14D23C3B639009E1C28 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		0D43F15123C3B639009E1C28 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0DDA92462986F88300F5BBBD /* astronaut_colored.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronaut_colored.json; sourceTree = "<group>"; };
 		2C3A094F370F897AD130291B /* Pods-SingleView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingleView/Pods-SingleView.release.xcconfig"; sourceTree = "<group>"; };
 		6FD98BE98947C742BC51D98C /* Pods_SingleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932E61CE766F3859A7F1384B /* Pods-SingleView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingleView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingleView/Pods-SingleView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		0D8922FF23B8B2A2004F625D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA92462986F88300F5BBBD /* astronaut_colored.json */,
 				0D43F14D23C3B639009E1C28 /* Home.storyboard */,
 				0D43F15123C3B639009E1C28 /* HomeVC.swift */,
 			);
@@ -107,6 +110,7 @@
 				0D259E6D20DAD4B20068A084 /* Sources */,
 				0D259E6E20DAD4B20068A084 /* Frameworks */,
 				0D259E6F20DAD4B20068A084 /* Resources */,
+				0B0109548A7A4E365BE7A03A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +162,7 @@
 			files = (
 				0D43F15323C3B639009E1C28 /* Home.storyboard in Resources */,
 				0D259E7F20DAD4B30068A084 /* LaunchScreen.storyboard in Resources */,
+				0DDA92472986F88300F5BBBD /* astronaut_colored.json in Resources */,
 				0D259E7C20DAD4B30068A084 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +170,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B0109548A7A4E365BE7A03A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SingleView/Pods-SingleView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SingleView/Pods-SingleView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SingleView/Pods-SingleView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		782BD0656442FDAD2BB3891A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
