@@ -28,9 +28,11 @@ askForContinue() {
 }
 
 fixWarnings() {
-    # Project last update check fix
-    sed -i '' -e 's/LastUpgradeCheck = 1100;/LastUpgradeCheck = 9999;/g' 'Pods/Pods.xcodeproj/project.pbxproj'
+    echo "Fixing warnings and JSON files format"
+    
+    # Project last update check fix and JSON files formatting
+    sed -i '' -E $'s/LastUpgradeCheck = [0-9]*;/LastUpgradeCheck = 9999;\\\n\t\t\t\tLastSwiftMigration = 9999;/g; s/\.json; path =/\.json; explicitFileType = text; path =/g' 'Pods/Pods.xcodeproj/project.pbxproj'
     
     # Schemes last update verions fix
-    find Pods/Pods.xcodeproj/xcuserdata -type f -name '*.xcscheme' -exec sed -i '' -e 's/LastUpgradeVersion = \"1100\"/LastUpgradeVersion = \"9999\"/g' {} +
+    find Pods/Pods.xcodeproj/xcuserdata -type f -name '*.xcscheme' -exec sed -i '' -e 's/LastUpgradeVersion = \"[0-9]*\"/LastUpgradeVersion = \"9999\"/g' {} +
 }
