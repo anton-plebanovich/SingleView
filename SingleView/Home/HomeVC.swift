@@ -26,5 +26,6 @@ final class HomeVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        print("It works!")
     }
 }

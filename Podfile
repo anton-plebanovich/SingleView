@@ -12,6 +12,13 @@ install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 def core_pods
   pod 'BMXCall', '~> 2.3.1'
   pod 'BMXCore', '~> 2.3.1'
+  
+  # Works fine if I leave only dependencies. 'OAuthSwift' is updated to '2.2.0' though
+  #  pod 'Alamofire'
+  #  pod 'Japx/Alamofire'
+  #  pod 'Japx/Core'
+  #  pod 'OAuthSwift'
+  #  pod 'TwilioVideo'
 end
 
 target 'SingleView' do
