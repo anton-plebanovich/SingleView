@@ -10,23 +10,8 @@ use_frameworks!
 install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 
 def core_pods
-#  pod 'KeychainAccess'
-#  pod 'Alamofire'
-#  pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
-#  pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
-#  pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
-#  pod 'RxUtils', :git => 'https://github.com/APUtils/RxUtils'
-#  pod 'KeyboardAvoidingView'
-#  pod 'SwiftReorder', :git => 'https://github.com/anton-plebanovich/SwiftReorder'
-#  pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa', :tag => 'v10.14.0'
-#  pod 'RxSwift'
-#  pod 'RxCocoa'
-#  pod 'RxRelay'
-#  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
-#  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
-#  pod 'Moya', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
-#  pod 'Moya/RxSwift', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
-#  pod 'lottie-ios'
+  pod 'BMXCall', '~> 2.3.1'
+  pod 'BMXCore', '~> 2.3.1'
 end
 
 target 'SingleView' do
@@ -35,22 +20,33 @@ end
 
 
 post_install do |installer|
-    # Add podInstall.command and podUpdate.command shell scripts to Pods project
-    pods_project = installer.pods_project
-    pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
-    pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
+  # Add podInstall.command and podUpdate.command shell scripts to Pods project
+  pods_project = installer.pods_project
+  pods_project.new_file "../Scripts/Cocoapods/podInstall.command"
+  pods_project.new_file "../Scripts/Cocoapods/podUpdate.command"
+  
+  # Silence Pods project warning
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['DEAD_CODE_STRIPPING'] = 'YES'
+  end
+  
+  installer.pods_project.targets.each do |target|
     
-    # Silence Pods project warning
-    installer.pods_project.build_configurations.each do |config|
-      config.build_settings['DEAD_CODE_STRIPPING'] = 'YES'
-    end
-    
-    # Update specific target build configurations
-    installer.pods_project.targets.each do |target|
+    if ['BMXCall', 'BMXCore', 'Alamofire', 'Japx', 'OAuthSwift', 'TwilioVideo'].include? target.name
       target.build_configurations.each do |config|
-        # Silence deployment target warnings
-        config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-        config.build_settings.delete 'ARCHS'
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        if config.name.include?("Release")
+          config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64 x86_64 i386'
+        end
       end
     end
-end
+    
+    target.build_configurations.each do |config|
+      config.build_settings['LD_NO_PIE'] = 'NO'
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      config.build_settings.delete('ARCHS')
+      config.build_settings.delete('IPHONEOS_DEPLOYMENT_TARGET')
+    end
+    
+  end # each target
+end # installer

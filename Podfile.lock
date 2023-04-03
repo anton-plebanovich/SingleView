@@ -1,3 +1,40 @@
-PODFILE CHECKSUM: 5b9335c397b43f24af458df6dbf5ab9b9250babe
+PODS:
+  - Alamofire (5.6.4)
+  - BMXCall (2.3.1):
+    - BMXCore (~> 2.3.1)
+    - TwilioVideo (~> 5.1)
+  - BMXCore (2.3.1):
+    - Alamofire (~> 5.2)
+    - Japx/Alamofire
+    - OAuthSwift (= 2.1.0)
+  - Japx/Alamofire (4.0.0):
+    - Alamofire
+    - Japx/Core
+  - Japx/Core (4.0.0)
+  - OAuthSwift (2.1.0)
+  - TwilioVideo (5.5.0)
+
+DEPENDENCIES:
+  - BMXCall (~> 2.3.1)
+  - BMXCore (~> 2.3.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BMXCall
+    - BMXCore
+    - Japx
+    - OAuthSwift
+    - TwilioVideo
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  BMXCall: 8fc865c1751b17cdadf6315d679cdf53714e3124
+  BMXCore: 983743905fb7c6b87e7388d5141d398418674a95
+  Japx: 4bb2d79d023af5e7ea44c0a2875c4b070080e111
+  OAuthSwift: ab1675598273e04355e0282459c328e65c9ddacd
+  TwilioVideo: 4da3eb08eb3a318584c48de58a2cf144c02dc5fd
+
+PODFILE CHECKSUM: a04021ae21c72002431969e4f8e52bfa2c871001
 
 COCOAPODS: 1.12.0
