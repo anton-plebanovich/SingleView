@@ -11,7 +11,7 @@ install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 
 def core_pods
 #  pod 'KeychainAccess'
-#  pod 'Alamofire'
+  pod 'Alamofire'
 #  pod 'ActionPickerUtils', :git => 'https://github.com/APUtils/ActionPickerUtils'
 #  pod 'APExtensions', :git => 'https://github.com/APUtils/APExtensions'
 #  pod 'BaseClasses', :git => 'https://github.com/APUtils/BaseClasses'
