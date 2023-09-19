@@ -22,6 +22,7 @@ def core_pods
 #  pod 'RxSwift'
 #  pod 'RxCocoa'
 #  pod 'RxRelay'
+#  pod 'RxUtils'
 #  pod 'LogsManager', :git => 'https://github.com/APUtils/LogsManager'
 #  pod 'SDWebImage', :git => 'https://github.com/dreampiggy/SDWebImage', :branch => 'fix_race_condition_cancel_callback'
 #  pod 'Moya', :git => 'https://github.com/anton-plebanovich/Moya', :branch => 'master'
